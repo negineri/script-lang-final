@@ -1,5 +1,8 @@
+<% @share_file.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
 <%= form_with model: @share_file, local: true  do |form| %>
-  <!--<%= form.text_area :content %><br><br>-->
+  Title: <%= form.text_field :title %><br>
   <%= form.file_field :files, multiple: true %><br>
   <%= form.submit %>
 <% end %>

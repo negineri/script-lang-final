@@ -1,0 +1,25 @@
+<h1>Files</h1>
+
+<% if user_signed_in? %>
+  <%= link_to 'Upload files', new_share_file_path %>
+<% end %>
+<%= link_to 'back', root_path%>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Owner</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @share_files.each do |file| %>
+      <tr>
+        <td><%= file.title %></td>
+        <td><%= file.user.name %></td>
+        <td><%= link_to 'Download', file%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

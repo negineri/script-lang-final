@@ -1,5 +1,7 @@
+<p> Owner: <%= @share_file.user.name %> </p>
 <% if @share_file.files.attached? %>
   <% @share_file.files.each do |file| %>
     <%= link_to file.filename, rails_blob_path(file) %> <br>
   <% end %>
 <% end %>
+<%= link_to "Back", {controller: :share_files, action: :index}%>

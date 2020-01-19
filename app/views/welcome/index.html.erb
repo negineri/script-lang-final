@@ -1,9 +1,12 @@
-<h1>Welcome#index</h1>
+<h1>Welcome</h1>
 
 <% if user_signed_in? %>
-  <p>You are <%= current_user.name %></p>
+  <p>Hello <%= current_user.name %></p>
+  <%= link_to "Files list", share_files_path%>
   <%= link_to 'Upload files', new_share_file_path %>
   <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 <% else %>
+  <p>Need login to upload files.</p>
+  <%= link_to "Files list", share_files_path%>
   <%= link_to 'Login', new_user_session_path %>
 <% end %>
