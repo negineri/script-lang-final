@@ -1,4 +1,5 @@
 class ShareFilesController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
   def new
     @share_file = ShareFile.new
   end
