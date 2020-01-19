@@ -1,0 +1,5 @@
+<%= form_with model: @share_file, local: true  do |form| %>
+  <!--<%= form.text_area :content %><br><br>-->
+  <%= form.file_field :files, multiple: true %><br>
+  <%= form.submit %>
+<% end %>

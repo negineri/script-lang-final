@@ -1,0 +1,5 @@
+<% if @share_file.files.attached? %>
+  <% @share_file.files.each do |file| %>
+    <%= link_to file.filename, rails_blob_path(file) %> <br>
+  <% end %>
+<% end %>
